@@ -6,16 +6,722 @@
 
     <title>Riku Onodera | Baritone</title>
 
-    <meta name="description" content="Official website of Riku Onodera, Japanese baritone.">
+    <meta name="description"
+          content="Official website of Riku Onodera, Japanese baritone.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #111;
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 22px 45px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+        }
+
+        .menu {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .menu a {
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            transition: opacity 0.3s ease;
+        }
+
+        .menu a:hover {
+            opacity: 0.45;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            padding-top: 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #f4f4f2;
+        }
+
+        .hero-inner {
+            width: min(1200px, 90%);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+
+            background: #d8d8d5;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #777;
+            font-size: 12px;
+            letter-spacing: 0.15em;
+        }
+
+        .hero-text {
+            padding: 30px 0;
+        }
+
+        .hero-label {
+            font-size: 12px;
+            letter-spacing: 0.25em;
+            margin-bottom: 25px;
+            color: #666;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 7vw, 96px);
+            font-weight: 400;
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+            margin-bottom: 28px;
+        }
+
+        .hero-role {
+            font-size: 17px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .hero-location {
+            margin-top: 14px;
+            color: #666;
+            font-size: 13px;
+            letter-spacing: 0.12em;
+        }
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        section {
+            padding: 130px 8%;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 11px;
+            letter-spacing: 0.25em;
+            color: #777;
+            margin-bottom: 22px;
+        }
+
+        .section-title {
+            font-size: clamp(34px, 5vw, 62px);
+            font-weight: 400;
+            line-height: 1.05;
+            margin-bottom: 45px;
+        }
+
+        /* =========================
+           BIOGRAPHY
+        ========================= */
+
+        .biography {
+            background: #fff;
+        }
+
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .bio-text {
+            font-size: 17px;
+            line-height: 1.9;
+            color: #333;
+        }
+
+        .bio-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding-bottom: 7px;
+            border-bottom: 1px solid #111;
+
+            font-size: 11px;
+            letter-spacing: 0.18em;
+        }
+
+        /* =========================
+           PERFORMANCES
+        ========================= */
+
+        .performances {
+            background: #f4f4f2;
+        }
+
+        .performance-item {
+            display: grid;
+            grid-template-columns: 130px 1fr auto;
+            gap: 30px;
+
+            padding: 25px 0;
+            border-top: 1px solid #ccc;
+        }
+
+        .performance-item:last-child {
+            border-bottom: 1px solid #ccc;
+        }
+
+        .performance-date {
+            font-size: 12px;
+            letter-spacing: 0.12em;
+            color: #666;
+        }
+
+        .performance-title {
+            font-size: 19px;
+        }
+
+        .performance-place {
+            font-size: 12px;
+            color: #666;
+            text-align: right;
+        }
+
+        /* =========================
+           ACCLAIM
+        ========================= */
+
+        .acclaim {
+            background: #111;
+            color: #fff;
+        }
+
+        .acclaim .section-label {
+            color: #aaa;
+        }
+
+        .acclaim-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+
+        .acclaim-item {
+            border-top: 1px solid #555;
+            padding-top: 22px;
+        }
+
+        .acclaim-year {
+            font-size: 12px;
+            color: #aaa;
+            letter-spacing: 0.15em;
+        }
+
+        .acclaim-title {
+            margin-top: 15px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        /* =========================
+           MEDIA
+        ========================= */
+
+        .media {
+            background: #fff;
+        }
+
+        .media-box {
+            aspect-ratio: 16 / 9;
+            background: #e7e7e5;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: #777;
+            font-size: 12px;
+            letter-spacing: 0.15em;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: #f4f4f2;
+        }
+
+        .contact-text {
+            font-size: 22px;
+            line-height: 1.7;
+            max-width: 700px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            margin-top: 35px;
+
+            font-size: 16px;
+            border-bottom: 1px solid #111;
+            padding-bottom: 7px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #111;
+            color: #fff;
+            padding: 35px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-size: 10px;
+            letter-spacing: 0.15em;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .nav {
+                padding: 18px 20px;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .hero {
+                padding-top: 100px;
+                padding-bottom: 70px;
+            }
+
+            .hero-image {
+                aspect-ratio: 4 / 5;
+            }
+
+            section {
+                padding: 90px 7%;
+            }
+
+            .bio-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .performance-item {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .performance-place {
+                text-align: left;
+            }
+
+            .acclaim-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Riku Onodera</h1>
+    <!-- =========================
+         HEADER
+    ========================= -->
 
-    <p>Baritone</p>
+    <header>
+        <nav class="nav">
 
-    <p>Official Website</p>
+            <a href="#home" class="logo">
+                RIKU ONODERA
+            </a>
+
+            <ul class="menu">
+                <li><a href="#biography">BIOGRAPHY</a></li>
+                <li><a href="#performances">PERFORMANCES</a></li>
+                <li><a href="#acclaim">ACCLAIM</a></li>
+                <li><a href="#media">MEDIA</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-inner">
+
+                <div class="hero-image">
+                    YOUR PHOTO
+                </div>
+
+                <div class="hero-text">
+
+                    <div class="hero-label">
+                        OFFICIAL WEBSITE
+                    </div>
+
+                    <h1>
+                        Riku<br>
+                        Onodera
+                    </h1>
+
+                    <div class="hero-role">
+                        Baritone
+                    </div>
+
+                    <div class="hero-location">
+                        Tokyo, Japan
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             BIOGRAPHY
+        ========================= -->
+
+        <section class="biography" id="biography">
+
+            <div class="section-inner">
+
+                <div class="section-label">
+                    BIOGRAPHY
+                </div>
+
+                <h2 class="section-title">
+                    Riku Onodera
+                </h2>
+
+                <div class="bio-grid">
+
+                    <div class="bio-text">
+                        Japanese baritone based in Tokyo,
+                        working across opera, art song,
+                        and concert repertoire.
+                    </div>
+
+                    <div class="bio-text">
+                        His artistic activities encompass
+                        vocal performance, Lied, opera,
+                        and orchestral repertoire.
+                        <br><br>
+                        A detailed biography and career
+                        history will be available here.
+                        <br>
+
+                        <a href="#" class="bio-link">
+                            READ FULL BIOGRAPHY →
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PERFORMANCES
+        ========================= -->
+
+        <section class="performances" id="performances">
+
+            <div class="section-inner">
+
+                <div class="section-label">
+                    PERFORMANCES
+                </div>
+
+                <h2 class="section-title">
+                    Performances
+                </h2>
+
+                <div class="performance-list">
+
+                    <div class="performance-item">
+
+                        <div class="performance-date">
+                            2026
+                        </div>
+
+                        <div class="performance-title">
+                            Upcoming Performance
+                        </div>
+
+                        <div class="performance-place">
+                            Tokyo, Japan
+                        </div>
+
+                    </div>
+
+                    <div class="performance-item">
+
+                        <div class="performance-date">
+                            2026
+                        </div>
+
+                        <div class="performance-title">
+                            Concert Performance
+                        </div>
+
+                        <div class="performance-place">
+                            Japan
+                        </div>
+
+                    </div>
+
+                    <div class="performance-item">
+
+                        <div class="performance-date">
+                            ARCHIVE
+                        </div>
+
+                        <div class="performance-title">
+                            Selected Performances
+                        </div>
+
+                        <div class="performance-place">
+                            View Archive →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ACCLAIM
+        ========================= -->
+
+        <section class="acclaim" id="acclaim">
+
+            <div class="section-inner">
+
+                <div class="section-label">
+                    ACCLAIM
+                </div>
+
+                <h2 class="section-title">
+                    Awards &amp;<br>
+                    Recognition
+                </h2>
+
+                <div class="acclaim-grid">
+
+                    <div class="acclaim-item">
+
+                        <div class="acclaim-year">
+                            AWARD
+                        </div>
+
+                        <div class="acclaim-title">
+                            Competition &amp;
+                            Performance Awards
+                        </div>
+
+                    </div>
+
+                    <div class="acclaim-item">
+
+                        <div class="acclaim-year">
+                            AWARD
+                        </div>
+
+                        <div class="acclaim-title">
+                            Selected National
+                            Competitions
+                        </div>
+
+                    </div>
+
+                    <div class="acclaim-item">
+
+                        <div class="acclaim-year">
+                            RECOGNITION
+                        </div>
+
+                        <div class="acclaim-title">
+                            Scholarships &
+                            Artist Development
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MEDIA
+        ========================= -->
+
+        <section class="media" id="media">
+
+            <div class="section-inner">
+
+                <div class="section-label">
+                    MEDIA
+                </div>
+
+                <h2 class="section-title">
+                    Video &amp; Audio
+                </h2>
+
+                <div class="media-box">
+                    MEDIA / VIDEO
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================= -->
+
+        <section class="contact" id="contact">
+
+            <div class="section-inner">
+
+                <div class="section-label">
+                    CONTACT
+                </div>
+
+                <h2 class="section-title">
+                    Contact
+                </h2>
+
+                <div class="contact-text">
+                    For performance opportunities,
+                    concert invitations, auditions,
+                    and professional inquiries,
+                    please contact Riku Onodera.
+                </div>
+
+                <a href="mailto:" class="contact-email">
+                    CONTACT →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div>
+            © Riku Onodera
+        </div>
+
+        <div>
+            BARITONE
+        </div>
+
+    </footer>
 
 </body>
 </html>
