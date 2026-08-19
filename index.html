@@ -927,6 +927,20 @@
         </div>
 
     </footer>
+<script>
+    const biographyToggle = document.querySelector('.biography-toggle');
+    const biographyContent = document.querySelector('.biography-content');
+    const toggleIcon = document.querySelector('.toggle-icon');
 
+    biographyToggle.addEventListener('click', function () {
+        biographyContent.classList.toggle('open');
+
+        if (biographyContent.classList.contains('open')) {
+            toggleIcon.textContent = '−';
+        } else {
+            toggleIcon.textContent = '+';
+        }
+    });
+</script>
 </body>
 </html>
