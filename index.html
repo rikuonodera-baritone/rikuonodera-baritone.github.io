@@ -1034,6 +1034,32 @@
         }
 
     });
-</script>   
+</script>
+<script>
+    const acclaimToggle = document.querySelector('.acclaim-toggle');
+    const acclaimContent = document.querySelector('.acclaim-content');
+    const acclaimToggleIcon = document.querySelector('.acclaim-toggle-icon');
+
+    /* ページを開いたときは必ず閉じた状態 */
+    acclaimContent.classList.remove('open');
+    acclaimContent.style.display = 'none';
+    acclaimToggleIcon.textContent = '+';
+
+    acclaimToggle.addEventListener('click', function () {
+
+        const isOpen = acclaimContent.classList.contains('open');
+
+        if (isOpen) {
+            acclaimContent.classList.remove('open');
+            acclaimContent.style.display = 'none';
+            acclaimToggleIcon.textContent = '+';
+        } else {
+            acclaimContent.classList.add('open');
+            acclaimContent.style.display = 'block';
+            acclaimToggleIcon.textContent = '−';
+        }
+
+    });
+</script>
 </body>
 </html>
