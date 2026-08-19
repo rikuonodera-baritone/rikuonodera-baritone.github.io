@@ -933,13 +933,17 @@
     const toggleIcon = document.querySelector('.toggle-icon');
 
     biographyToggle.addEventListener('click', function () {
-        biographyContent.classList.toggle('open');
 
-        if (biographyContent.classList.contains('open')) {
-            toggleIcon.textContent = '−';
-        } else {
+        if (biographyContent.style.display === 'block') {
+            biographyContent.style.display = 'none';
+            biographyContent.classList.remove('open');
             toggleIcon.textContent = '+';
+        } else {
+            biographyContent.style.display = 'block';
+            biographyContent.classList.add('open');
+            toggleIcon.textContent = '−';
         }
+
     });
 </script>
 </body>
