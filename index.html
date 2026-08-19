@@ -1012,5 +1012,24 @@
 
     });
 </script>
+<script>
+    const performancesToggle = document.querySelector('.performances-toggle');
+    const performancesContent = document.querySelector('.performances-content');
+    const performancesToggleIcon = document.querySelector('.performances-toggle-icon');
+
+    performancesToggle.addEventListener('click', function () {
+
+        if (performancesContent.style.display === 'block') {
+            performancesContent.style.display = 'none';
+            performancesContent.classList.remove('open');
+            performancesToggleIcon.textContent = '+';
+        } else {
+            performancesContent.style.display = 'block';
+            performancesContent.classList.add('open');
+            performancesToggleIcon.textContent = '−';
+        }
+
+    });
+</script>    
 </body>
 </html>
