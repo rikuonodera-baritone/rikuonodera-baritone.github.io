@@ -1131,5 +1131,31 @@
 
     });
 </script>
+<script>
+    const contactToggle = document.querySelector('.contact-toggle');
+    const contactContent = document.querySelector('.contact-accordion-content');
+    const contactToggleIcon = document.querySelector('.contact-toggle-icon');
+
+    /* ページを開いたときは必ず閉じた状態 */
+    contactContent.classList.remove('open');
+    contactContent.style.display = 'none';
+    contactToggleIcon.textContent = '+';
+
+    contactToggle.addEventListener('click', function () {
+
+        const isOpen = contactContent.classList.contains('open');
+
+        if (isOpen) {
+            contactContent.classList.remove('open');
+            contactContent.style.display = 'none';
+            contactToggleIcon.textContent = '+';
+        } else {
+            contactContent.classList.add('open');
+            contactContent.style.display = 'block';
+            contactToggleIcon.textContent = '−';
+        }
+
+    });
+</script>
 </body>
 </html>
