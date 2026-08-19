@@ -8,7 +8,34 @@
 
     <meta name="description"
           content="Official website of Riku Onodera, Japanese baritone.">
+        /* Biography accordion */
 
+        .biography-toggle {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .biography-toggle:hover {
+            opacity: 0.65;
+        }
+
+        .toggle-icon {
+            font-size: 1.5rem;
+            font-weight: 300;
+            transition: transform 0.3s ease;
+        }
+
+        .biography-content {
+            display: none;
+            margin-top: 40px;
+        }
+
+        .biography-content.open {
+            display: block;
+        }
     <style>
         * {
             margin: 0;
