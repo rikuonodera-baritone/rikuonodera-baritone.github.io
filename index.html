@@ -981,15 +981,22 @@
     const biographyContent = document.querySelector('.biography-content');
     const toggleIcon = document.querySelector('.biography-toggle-icon');
 
+    /* ページを開いたときは必ず閉じた状態 */
+    biographyContent.classList.remove('open');
+    biographyContent.style.display = 'none';
+    toggleIcon.textContent = '+';
+
     biographyToggle.addEventListener('click', function () {
 
-        if (biographyContent.style.display === 'block') {
-            biographyContent.style.display = 'none';
+        const isOpen = biographyContent.classList.contains('open');
+
+        if (isOpen) {
             biographyContent.classList.remove('open');
+            biographyContent.style.display = 'none';
             toggleIcon.textContent = '+';
         } else {
-            biographyContent.style.display = 'block';
             biographyContent.classList.add('open');
+            biographyContent.style.display = 'block';
             toggleIcon.textContent = '−';
         }
 
