@@ -433,6 +433,53 @@
     margin: 0 auto 50px;
 }
         
+        /* Performances accordion */
+
+        .performances-toggle {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .performances-toggle:hover {
+            opacity: 0.65;
+        }
+
+        .performances-toggle-icon {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .performances-content {
+            display: none !important;
+            margin-top: 40px;
+        }
+
+        .performances-content.open {
+            display: block !important;
+        }
+
+        .performances-photo {
+            display: block;
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            margin: 0 auto 50px;
+        }
+
+        .performance-category {
+            margin-top: 55px;
+        }
+
+        .performance-heading {
+            font-size: 13px;
+            letter-spacing: 0.2em;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+        
     </style>
 </head>
 
