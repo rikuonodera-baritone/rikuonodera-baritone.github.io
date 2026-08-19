@@ -1020,6 +1020,31 @@
 
     </footer>
 <script>
+    const biographyToggle = document.querySelector('.biography-toggle');
+    const biographyContent = document.querySelector('.biography-content');
+    const biographyToggleIcon = document.querySelector('.biography-toggle-icon');
+
+    biographyContent.classList.remove('open');
+    biographyContent.style.display = 'none';
+    biographyToggleIcon.textContent = '+';
+
+    biographyToggle.addEventListener('click', function () {
+
+        const isOpen = biographyContent.classList.contains('open');
+
+        if (isOpen) {
+            biographyContent.classList.remove('open');
+            biographyContent.style.display = 'none';
+            biographyToggleIcon.textContent = '+';
+        } else {
+            biographyContent.classList.add('open');
+            biographyContent.style.display = 'block';
+            biographyToggleIcon.textContent = '−';
+        }
+
+    });
+</script>
+<script>
     const performancesToggle = document.querySelector('.performances-toggle');
     const performancesContent = document.querySelector('.performances-content');
     const performancesToggleIcon = document.querySelector('.performances-toggle-icon');
