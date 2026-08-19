@@ -411,6 +411,7 @@
 .biography-toggle,
 .performances-toggle,
 .acclaim-toggle,
+.media-toggle,
 .contact-toggle {
     cursor: pointer;
     display: flex;
@@ -434,6 +435,7 @@
 .biography-toggle-icon,
 .performances-toggle-icon,
 .acclaim-toggle-icon,
+.media-toggle-icon,
 .contact-toggle-icon {
     font-size: 1.5rem;
     font-weight: 300;
@@ -531,6 +533,28 @@
     max-width: 520px;
     height: auto;
     margin: 0 auto 50px;
+}
+.media-content {
+    display: none !important;
+    margin-top: 40px;
+}
+
+.media-content.open {
+    display: block !important;
+}
+
+.media-text {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.media-link {
+    display: inline-block;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #111;
+    font-size: 12px;
+    letter-spacing: 0.16em;
 }
         
     </style>
