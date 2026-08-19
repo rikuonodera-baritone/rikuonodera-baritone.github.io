@@ -408,23 +408,33 @@
         
         /* Performances accordion */
 
-.biography-toggle {
+.biography-toggle,
+.performances-toggle,
+.acclaim-toggle,
+.contact-toggle {
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     user-select: none;
 }
 
-.biography-toggle:hover {
+.biography-toggle:hover,
+.performances-toggle:hover,
+.acclaim-toggle:hover,
+.contact-toggle:hover {
     opacity: 0.65;
 }
 
-.biography-toggle-icon {
+.biography-toggle-icon,
+.performances-toggle-icon,
+.acclaim-toggle-icon,
+.contact-toggle-icon {
     font-size: 1.5rem;
     font-weight: 300;
+    margin-left: auto;
 }
-
         .performances-content {
             display: none !important;
             margin-top: 40px;
