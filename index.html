@@ -28,14 +28,19 @@
             transition: transform 0.3s ease;
         }
 
-        .biography-content {
-            display: none;
-            margin-top: 40px;
-        }
+.biography-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+    transition: max-height 0.5s ease, opacity 0.4s ease, margin-top 0.5s ease;
+}
 
-        .biography-content.open {
-            display: block;
-        }
+.biography-content.open {
+    max-height: 1000px;
+    opacity: 1;
+    margin-top: 40px;
+}
     <style>
         * {
             margin: 0;
