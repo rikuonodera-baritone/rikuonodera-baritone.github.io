@@ -966,49 +966,30 @@
 
     </footer>
 <script>
-    const biographyToggle = document.querySelector('.biography-toggle');
-    const biographyContent = document.querySelector('.biography-content');
-    const toggleIcon = document.querySelector('.biography-toggle-icon');
-
-    /* ページを開いたときは必ず閉じた状態 */
-    biographyContent.classList.remove('open');
-    biographyContent.style.display = 'none';
-    toggleIcon.textContent = '+';
-
-    biographyToggle.addEventListener('click', function () {
-
-        const isOpen = biographyContent.classList.contains('open');
-
-        if (isOpen) {
-            biographyContent.classList.remove('open');
-            biographyContent.style.display = 'none';
-            toggleIcon.textContent = '+';
-        } else {
-            biographyContent.classList.add('open');
-            biographyContent.style.display = 'block';
-            toggleIcon.textContent = '−';
-        }
-
-    });
-</script>
-<script>
     const performancesToggle = document.querySelector('.performances-toggle');
     const performancesContent = document.querySelector('.performances-content');
     const performancesToggleIcon = document.querySelector('.performances-toggle-icon');
 
+    /* ページを開いたときは必ず閉じた状態 */
+    performancesContent.classList.remove('open');
+    performancesContent.style.display = 'none';
+    performancesToggleIcon.textContent = '+';
+
     performancesToggle.addEventListener('click', function () {
 
-        if (performancesContent.style.display === 'block') {
-            performancesContent.style.display = 'none';
+        const isOpen = performancesContent.classList.contains('open');
+
+        if (isOpen) {
             performancesContent.classList.remove('open');
+            performancesContent.style.display = 'none';
             performancesToggleIcon.textContent = '+';
         } else {
-            performancesContent.style.display = 'block';
             performancesContent.classList.add('open');
+            performancesContent.style.display = 'block';
             performancesToggleIcon.textContent = '−';
         }
 
     });
-</script>    
+</script>   
 </body>
 </html>
