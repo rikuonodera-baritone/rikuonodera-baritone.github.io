@@ -1200,5 +1200,31 @@
 
     });
 </script>
+<script>
+    const mediaToggle = document.querySelector('.media-toggle');
+    const mediaContent = document.querySelector('.media-content');
+    const mediaToggleIcon = document.querySelector('.media-toggle-icon');
+
+    /* ページを開いたときは閉じた状態 */
+    mediaContent.classList.remove('open');
+    mediaContent.style.display = 'none';
+    mediaToggleIcon.textContent = '+';
+
+    mediaToggle.addEventListener('click', function () {
+
+        const isOpen = mediaContent.classList.contains('open');
+
+        if (isOpen) {
+            mediaContent.classList.remove('open');
+            mediaContent.style.display = 'none';
+            mediaToggleIcon.textContent = '+';
+        } else {
+            mediaContent.classList.add('open');
+            mediaContent.style.display = 'block';
+            mediaToggleIcon.textContent = '−';
+        }
+
+    });
+</script>
 </body>
 </html>
