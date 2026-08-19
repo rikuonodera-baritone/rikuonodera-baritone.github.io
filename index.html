@@ -452,7 +452,43 @@
             font-weight: 500;
             margin-bottom: 25px;
         }
-        
+/* Acclaim accordion */
+
+.acclaim-toggle {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    user-select: none;
+}
+
+.acclaim-toggle:hover {
+    opacity: 0.65;
+}
+
+.acclaim-toggle-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-left: auto;
+}
+
+.acclaim-content {
+    display: none !important;
+    margin-top: 40px;
+}
+
+.acclaim-content.open {
+    display: block !important;
+}
+
+.acclaim-photo {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 0 auto 50px;
+}        
     </style>
 </head>
 
